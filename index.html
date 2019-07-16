@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绘制海报图</title>
+</head>
+<body>
+    
+</body>
+<script type="module">
+    import getCtx from "./src/drawPoster.js";
+    const img = document.createElement('img');
+    img.width = 750;
+    const body = document.querySelector('body');
+    const canvas = document.createElement('canvas');
+    const data = [
+        {
+            type: 'img',
+            url: './demo/1.png',
+            x: 0,
+            y: 0,
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 32,
+            x: 0,
+            y: 200,
+            font: '32px',
+            color: '#333333',
+            content: '山行',
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 24,
+            x: 0,
+            y: 240,
+            font: '24px',
+            color: '#333333',
+            content: '作者：杜牧',
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 24,
+            x: 0,
+            y: 280,
+            font: '28px',
+            color: '#333333',
+            content: '远上寒山石径斜，',
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 24,
+            x: 0,
+            y: 320,
+            font: '28px',
+            color: '#333333',
+            content: '白云生处有人家。',
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 24,
+            x: 0,
+            y: 360,
+            font: '28px',
+            color: '#333333',
+            content: '停车坐爱枫林晚，',
+        },
+        {
+            type: 'text',
+            width: 750,
+            height: 24,
+            x: 0,
+            y: 400,
+            font: '28px',
+            color: '#333333',
+            content: '霜叶红于二月花。',
+        },
+    ];
+    getCtx(data).then((res) => {
+        img.src = res;
+        body.appendChild(img);
+    })
+</script>
+</html>
